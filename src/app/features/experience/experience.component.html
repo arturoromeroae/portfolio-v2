@@ -1,0 +1,83 @@
+<section class="section experience">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Career</span>
+      <h2>{{ 'experience.title' | translate }}</h2>
+      <p>{{ 'experience.subtitle' | translate }}</p>
+    </div>
+
+    <div class="experience__layout">
+
+      <!-- Tab list -->
+      <div class="experience__tabs" role="tablist">
+        @for (job of jobs; let i = $index; track job.id) {
+          <button
+            class="tab-btn"
+            role="tab"
+            [class.active]="activeJob() === i"
+            [style.--tab-color]="job.color"
+            (click)="activeJob.set(i)"
+          >
+            <span class="tab-company">{{ (job.prefix + '.company') | translate }}</span>
+            <span class="tab-period">{{ (job.prefix + '.period') | translate }}</span>
+            @if (job.current) {
+              <span class="current-badge">Current</span>
+            }
+          </button>
+        }
+      </div>
+
+      <!-- Content panel -->
+      @let job = jobs[activeJob()];
+      <div class="experience__panel" role="tabpanel">
+
+        <div class="panel-header">
+          <div class="panel-title">
+            <h3>{{ (job.prefix + '.role') | translate }}</h3>
+            <span class="at">&#64;</span>
+            <span class="company-name" [style.color]="job.color">
+              {{ (job.prefix + '.company') | translate }}
+            </span>
+          </div>
+          <div class="panel-meta">
+            <span class="meta-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+              </svg>
+              {{ (job.prefix + '.period') | translate }}
+            </span>
+            <span class="meta-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              {{ (job.prefix + '.location') | translate }}
+            </span>
+          </div>
+        </div>
+
+        <p class="panel-description">{{ (job.prefix + '.description') | translate }}</p>
+
+        <h4 class="resp-title">{{ 'experience.responsibilities' | translate }}</h4>
+        <ul class="resp-list">
+          @for (resp of job.responsibilities; track resp) {
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              {{ resp | translate }}
+            </li>
+          }
+        </ul>
+
+        <div class="tech-tags">
+          @for (tech of job.techs; track tech) {
+            <span class="tech-badge">{{ tech }}</span>
+          }
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

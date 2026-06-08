@@ -1,0 +1,88 @@
+<section class="section about">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">{{ 'about.title' | translate }}</span>
+      <h2>{{ 'about.subtitle' | translate }}</h2>
+    </div>
+
+    <div class="about__grid">
+
+      <!-- Text side -->
+      <div class="about__text">
+        <p>{{ 'about.description' | translate }}</p>
+        <p>{{ 'about.description2' | translate }}</p>
+
+        <!-- Location & sectors -->
+        <div class="about__meta">
+          <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Lima, Perú
+          </div>
+          <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+            </svg>
+            {{ 'about.sectors_list' | translate }}
+          </div>
+        </div>
+
+        <!-- Specialties -->
+        <div class="about__specialties">
+          <h3>{{ 'about.specialties' | translate }}</h3>
+          <div class="specialties-grid">
+            @for (s of specialties; track s.key) {
+              <div class="specialty-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                {{ s.key | translate }}
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats side -->
+      <div class="about__stats">
+        <div class="big-stat">
+          <span class="big-number gradient-text">5+</span>
+          <span class="big-label">{{ 'about.years_exp' | translate }}</span>
+        </div>
+        <div class="big-stat">
+          <span class="big-number gradient-text">20+</span>
+          <span class="big-label">{{ 'about.projects_done' | translate }}</span>
+        </div>
+        <div class="big-stat">
+          <span class="big-number gradient-text">4</span>
+          <span class="big-label">{{ 'about.companies' | translate }}</span>
+        </div>
+        <div class="big-stat">
+          <span class="big-number gradient-text">4</span>
+          <span class="big-label">{{ 'about.sectors' | translate }}</span>
+        </div>
+
+        <!-- Code card -->
+        <div class="code-card">
+          <div class="code-header">
+            <span class="dot r"></span>
+            <span class="dot y"></span>
+            <span class="dot g"></span>
+            <span class="code-filename">profile.ts</span>
+          </div>
+          <pre class="code-body"><code><span class="kw">const</span> arturo <span class="op">=</span> &#123;
+  <span class="key">name</span><span class="op">:</span> <span class="str">'Arturo Romero'</span>,
+  <span class="key">role</span><span class="op">:</span> <span class="str">'Senior Full Stack'</span>,
+  <span class="key">location</span><span class="op">:</span> <span class="str">'Lima, Peru 🇵🇪'</span>,
+  <span class="key">available</span><span class="op">:</span> <span class="bool">true</span>,
+  <span class="key">remote</span><span class="op">:</span> <span class="bool">true</span>,
+&#125;;</code></pre>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

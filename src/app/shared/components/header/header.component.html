@@ -1,0 +1,35 @@
+<header class="header" [class.scrolled]="scrolled()">
+  <div class="container header__inner">
+
+    <a class="header__logo" (click)="scrollTo('hero')">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-name">AR</span>
+      <span class="logo-bracket">/&gt;</span>
+    </a>
+
+    <nav class="header__nav" [class.open]="menuOpen()">
+      @for (item of navItems; track item.fragment) {
+        <button class="nav-link" (click)="scrollTo(item.fragment)">
+          {{ item.labelKey | translate }}
+        </button>
+      }
+      <a class="btn btn-primary btn-sm" href="assets/cv/Arturo-Romero-CV.pdf" download>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        {{ 'nav.download_cv' | translate }}
+      </a>
+      <app-language-switcher />
+    </nav>
+
+    <div class="header__actions">
+      <app-language-switcher class="desktop-only" />
+      <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-label]="'Toggle menu'" [class.active]="menuOpen()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>

@@ -1,0 +1,38 @@
+<section class="section availability">
+  <div class="availability__bg"></div>
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Status</span>
+      <h2>{{ 'availability.title' | translate }}</h2>
+      <p>{{ 'availability.subtitle' | translate }}</p>
+    </div>
+
+    <div class="availability__status">
+      <span class="status-indicator">
+        <span class="status-dot"></span>
+        {{ 'availability.status' | translate }}
+      </span>
+    </div>
+
+    <div class="availability__grid">
+      @for (opt of options; track opt.titleKey) {
+        <div class="avail-card avail-card--{{ opt.titleKey.split('.').pop() }}">
+          <span class="avail-icon">{{ opt.icon }}</span>
+          <h3>{{ opt.titleKey | translate }}</h3>
+          <p>{{ opt.descKey | translate }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="availability__cta">
+      <button class="btn btn-primary btn-lg" (click)="scrollToContact()">
+        {{ 'availability.cta' | translate }}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</section>

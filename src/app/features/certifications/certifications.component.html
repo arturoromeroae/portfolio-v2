@@ -1,0 +1,30 @@
+<section class="section certifications">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Credentials</span>
+      <h2>{{ 'certifications.title' | translate }}</h2>
+      <p>{{ 'certifications.subtitle' | translate }}</p>
+    </div>
+
+    <div class="certs-grid">
+      @for (cert of certs; track cert.id) {
+        <div class="cert-card" [style.--cert-color]="cert.color">
+          <div class="cert-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <div class="cert-card__body">
+            <span class="cert-issuer">{{ cert.issuer }}</span>
+            <h3>{{ cert.nameKey | translate }}</h3>
+            <span class="cert-year">{{ cert.year }}</span>
+          </div>
+          <div class="cert-card__glow"></div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

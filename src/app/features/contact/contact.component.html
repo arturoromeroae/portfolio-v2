@@ -1,0 +1,128 @@
+<section class="section contact">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Contact</span>
+      <h2>{{ 'contact.title' | translate }}</h2>
+      <p>{{ 'contact.subtitle' | translate }}</p>
+    </div>
+
+    <div class="contact__layout">
+
+      <!-- Form -->
+      <div class="contact__form-wrap">
+        @if (status() === 'success') {
+          <div class="success-message">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <h3>{{ 'contact.success' | translate }}</h3>
+          </div>
+        } @else {
+          <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="contact-form">
+
+            <div class="form-row">
+              <div class="form-group" [class.error]="isInvalid('name')">
+                <label for="name">{{ 'contact.name' | translate }}</label>
+                <input id="name" type="text" formControlName="name"
+                  [placeholder]="'contact.name' | translate" autocomplete="name">
+                @if (isInvalid('name')) {
+                  <span class="error-msg">{{ 'contact.name_required' | translate }}</span>
+                }
+              </div>
+
+              <div class="form-group" [class.error]="isInvalid('email')">
+                <label for="email">{{ 'contact.email' | translate }}</label>
+                <input id="email" type="email" formControlName="email"
+                  [placeholder]="'contact.email' | translate" autocomplete="email">
+                @if (f['email'].errors?.['required'] && isInvalid('email')) {
+                  <span class="error-msg">{{ 'contact.email_required' | translate }}</span>
+                }
+                @if (f['email'].errors?.['email'] && isInvalid('email')) {
+                  <span class="error-msg">{{ 'contact.email_invalid' | translate }}</span>
+                }
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="company">{{ 'contact.company' | translate }}</label>
+              <input id="company" type="text" formControlName="company"
+                [placeholder]="'contact.company' | translate" autocomplete="organization">
+            </div>
+
+            <div class="form-group" [class.error]="isInvalid('message')">
+              <label for="message">{{ 'contact.message' | translate }}</label>
+              <textarea id="message" formControlName="message" rows="5"
+                [placeholder]="'contact.message' | translate"></textarea>
+              @if (isInvalid('message')) {
+                <span class="error-msg">{{ 'contact.message_required' | translate }}</span>
+              }
+            </div>
+
+            <!-- Honeypot anti-spam -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <!-- Cloudflare Turnstile -->
+            <div class="turnstile-wrap">
+              <div id="turnstile-container"></div>
+              @if (turnstileError()) {
+                <span class="error-msg">{{ 'contact.turnstile_error' | translate }}</span>
+              }
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg submit-btn"
+              [disabled]="status() === 'sending'">
+              @if (status() === 'sending') {
+                <span class="spinner"></span>
+                {{ 'contact.sending' | translate }}
+              } @else {
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+                {{ 'contact.send' | translate }}
+              }
+            </button>
+
+          </form>
+        }
+      </div>
+
+      <!-- Direct links -->
+      <div class="contact__info">
+        <h3>{{ 'contact.or_reach' | translate }}</h3>
+        <div class="contact-links">
+          @for (link of directLinks; track link.label) {
+            <a [href]="link.url" target="_blank" rel="noopener" class="contact-link">
+              @if (link.icon === 'linkedin') {
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+              } @else if (link.icon === 'github') {
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                </svg>
+              } @else {
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              }
+              <span>{{ link.label }}</span>
+              <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+              </svg>
+            </a>
+          }
+        </div>
+
+        <div class="location-card">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          {{ 'contact.location' | translate }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

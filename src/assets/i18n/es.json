@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "technologies": "Tecnologías",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "certifications": "Certificaciones",
+    "contact": "Contacto",
+    "download_cv": "Descargar CV"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "role": "Senior Full Stack Developer",
+    "tagline": "Construyendo soluciones empresariales escalables con Angular, Cloud e integraciones críticas",
+    "available": "Disponible para nuevas oportunidades",
+    "cta_contact": "Contactar",
+    "cta_cv": "Descargar CV",
+    "scroll": "Scroll para explorar"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "Desarrollador Full Stack con enfoque empresarial",
+    "description": "Desarrollador Full Stack con más de 5 años de experiencia diseñando y construyendo aplicaciones empresariales de alto impacto. Especializado en arquitecturas Angular, integraciones con plataformas críticas como Salesforce y PeopleSoft, y despliegues en Azure y AWS.",
+    "description2": "He liderado equipos de desarrollo, conducido revisiones de código y asegurado la calidad en proyectos corporativos para sectores financiero, educativo y de retail. Mi foco está en escribir código limpio, escalable y bien documentado que resuelva problemas reales de negocio.",
+    "years_exp": "Años de experiencia",
+    "projects_done": "Proyectos entregados",
+    "companies": "Empresas",
+    "sectors": "Sectores",
+    "sectors_list": "Financiero · Educación · Retail · Tecnología",
+    "specialties": "Especialidades",
+    "specialty_1": "Arquitectura Angular",
+    "specialty_2": "Integraciones Empresariales",
+    "specialty_3": "Cloud & DevOps",
+    "specialty_4": "Liderazgo Técnico",
+    "specialty_5": "Seguridad Web",
+    "specialty_6": "APIs REST & ETL"
+  },
+  "technologies": {
+    "title": "Stack Tecnológico",
+    "subtitle": "Tecnologías con las que construyo soluciones profesionales",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "databases": "Bases de Datos",
+    "cloud": "Cloud",
+    "devops": "DevOps",
+    "integrations": "Integraciones Empresariales",
+    "security": "Seguridad",
+    "expert": "Experto",
+    "advanced": "Avanzado",
+    "intermediate": "Intermedio"
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "subtitle": "Trayectoria en empresas y proyectos de alto impacto",
+    "present": "Presente",
+    "responsibilities": "Responsabilidades clave",
+    "seidor": {
+      "company": "SEIDOR",
+      "role": "Senior Full Stack Developer",
+      "period": "2025 — Presente",
+      "location": "Lima, Perú",
+      "description": "Desarrollo de aplicaciones empresariales, integraciones con Salesforce y PeopleSoft, implementación de ETL y procesamiento de pagos con Izipay.",
+      "resp_1": "Desarrollo frontend con Angular y backend con PHP para plataformas corporativas",
+      "resp_2": "Integración con Salesforce CRM y PeopleSoft ERP mediante APIs REST",
+      "resp_3": "Implementación de procesos ETL para migración y transformación de datos",
+      "resp_4": "Integración con pasarela de pagos Izipay para e-commerce corporativo",
+      "resp_5": "Revisiones de código y aseguramiento de calidad técnica"
+    },
+    "csti": {
+      "company": "CSTI",
+      "role": "Full Stack Developer & Tech Lead",
+      "period": "2021 — 2025",
+      "location": "Lima, Perú",
+      "description": "Liderazgo de proyectos web corporativos en Azure, implementación de seguridad avanzada y gestión de plataformas WordPress empresariales.",
+      "resp_1": "Liderazgo técnico de equipo de desarrollo web",
+      "resp_2": "Despliegue y administración de aplicaciones en Microsoft Azure",
+      "resp_3": "Contenerización con Docker y configuración de pipelines CI/CD",
+      "resp_4": "Implementación de seguridad: CSP, reCAPTCHA Enterprise, Wordfence",
+      "resp_5": "Desarrollo y personalización de plataformas WordPress empresariales"
+    },
+    "ae": {
+      "company": "AE Online Solutions",
+      "role": "Full Stack Developer",
+      "period": "2020 — 2021",
+      "location": "Lima, Perú",
+      "description": "Desarrollo de soluciones web con PHP, Python y despliegues en AWS con Docker.",
+      "resp_1": "Desarrollo de aplicaciones web con PHP y Python/Django",
+      "resp_2": "Despliegue de infraestructura en Amazon Web Services (AWS)",
+      "resp_3": "Contenerización de aplicaciones con Docker",
+      "resp_4": "Desarrollo e integración de APIs REST",
+      "resp_5": "Optimización de rendimiento y escalabilidad"
+    },
+    "freelance": {
+      "company": "Freelance",
+      "role": "Full Stack Developer",
+      "period": "2019 — Presente",
+      "location": "Remoto",
+      "description": "Desarrollo de proyectos independientes con WordPress, Django y diseño UI/UX con Figma.",
+      "resp_1": "Desarrollo de sitios web y tiendas online con WordPress",
+      "resp_2": "Desarrollo de aplicaciones web con Django REST Framework",
+      "resp_3": "Diseño de interfaces y prototipos con Figma",
+      "resp_4": "Integración de APIs de terceros",
+      "resp_5": "Consultoría técnica para clientes nacionales e internacionales"
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Soluciones empresariales construidas con tecnología de vanguardia",
+    "view_demo": "Ver Demo",
+    "view_code": "Ver Código",
+    "p1": {
+      "title": "Enterprise Integration Platform",
+      "description": "Plataforma de integración empresarial que conecta Salesforce CRM con PeopleSoft ERP mediante APIs REST, con procesamiento ETL en tiempo real y dashboard de monitoreo."
+    },
+    "p2": {
+      "title": "Corporate Web Platform",
+      "description": "Plataforma web corporativa desarrollada en Angular con autenticación JWT, roles y permisos, integración con Azure AD y despliegue en contenedores Docker."
+    },
+    "p3": {
+      "title": "REST API con Django",
+      "description": "API REST robusta desarrollada con Django REST Framework, autenticación JWT, documentación Swagger, despliegue en AWS con Docker y PostgreSQL."
+    },
+    "p4": {
+      "title": "Cloud-Based Management System",
+      "description": "Sistema de gestión empresarial en la nube con Angular frontend, PHP backend, base de datos PostgreSQL y despliegue en Azure con escalado automático."
+    }
+  },
+  "certifications": {
+    "title": "Certificaciones",
+    "subtitle": "Formación continua en tecnología y seguridad",
+    "c1": "ISC2 Candidate",
+    "c2": "IBM & ISC2 Cybersecurity Specialist",
+    "c3": "Cisco: Introducción a la Ciberseguridad",
+    "c4": "Frontend Developer",
+    "c5": "React Developer",
+    "c6": "Webpack"
+  },
+  "availability": {
+    "title": "Disponibilidad",
+    "subtitle": "Listo para el siguiente desafío",
+    "status": "Abierto a nuevas oportunidades",
+    "remote": "Trabajo Remoto",
+    "remote_desc": "Disponible para posiciones 100% remotas con equipos internacionales",
+    "hybrid": "Trabajo Híbrido",
+    "hybrid_desc": "Flexible para modelos híbridos en Lima o ciudades principales del Perú",
+    "relocation": "Reubicación Internacional",
+    "relocation_desc": "Abierto a reubicación en España, Europa o Latinoamérica",
+    "cta": "Hablemos de tu proyecto"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto o una oportunidad? Hablemos.",
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "company": "Empresa / Organización",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado correctamente!",
+    "error": "Error al enviar. Inténtalo de nuevo.",
+    "name_required": "El nombre es requerido",
+    "email_required": "El correo es requerido",
+    "email_invalid": "Correo electrónico inválido",
+    "message_required": "El mensaje es requerido",
+    "turnstile_error": "Por favor completa la verificación de seguridad",
+    "or_reach": "O contáctame directamente",
+    "location": "Lima, Perú"
+  },
+  "footer": {
+    "built_with": "Construido con",
+    "rights": "Todos los derechos reservados",
+    "description": "Senior Full Stack Developer especializado en Angular, Cloud e integraciones empresariales."
+  }
+}

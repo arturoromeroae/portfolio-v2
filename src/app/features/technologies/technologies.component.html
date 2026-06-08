@@ -1,0 +1,40 @@
+<section class="section technologies">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Stack</span>
+      <h2>{{ 'technologies.title' | translate }}</h2>
+      <p>{{ 'technologies.subtitle' | translate }}</p>
+    </div>
+
+    <div class="tech-grid">
+      @for (cat of categories; track cat.key) {
+        <div class="tech-category">
+          <div class="category-header">
+            <span class="category-icon">{{ cat.icon }}</span>
+            <h3>{{ cat.labelKey | translate }}</h3>
+          </div>
+          <div class="tech-list">
+            @for (tech of getTech(cat.key); track tech.name) {
+              <div class="tech-item">
+                <div class="tech-item__top">
+                  <span class="tech-name">{{ tech.name }}</span>
+                  <span class="tech-level" [style.color]="getLevelColor(tech.level)">
+                    {{ ('technologies.' + tech.level) | translate }}
+                  </span>
+                </div>
+                <div class="tech-bar">
+                  <div class="tech-bar__fill"
+                    [style.width.%]="getLevelPercent(tech.level)"
+                    [style.background]="getLevelColor(tech.level)">
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
