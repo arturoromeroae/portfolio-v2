@@ -1,17 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { ThemeService } from '../../../core/services/theme.service';
 
 @Component({
   selector: 'app-theme-switcher',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   template: `
     <button
       class="theme-switcher-btn"
       (click)="themeService.toggleTheme()"
-      [attr.aria-label]="themeService.currentTheme() === 'dark' ? 'Cambiar a modo claro (Cielo)' : 'Cambiar a modo oscuro (Espacio)'"
-      [title]="themeService.currentTheme() === 'dark' ? 'Activar Cielo Soleado' : 'Activar Espacio Estelar'"
+      [attr.aria-label]="(themeService.currentTheme() === 'dark' ? 'theme.aria_dark' : 'theme.aria_light') | translate"
+      [title]="(themeService.currentTheme() === 'dark' ? 'theme.title_dark' : 'theme.title_light') | translate"
     >
       <div class="theme-icon-container" [class.is-light]="themeService.currentTheme() === 'light'">
         <!-- Sun Icon (Active in Light Mode) -->
@@ -32,7 +33,7 @@ import { ThemeService } from '../../../core/services/theme.service';
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
         </svg>
       </div>
-      <span class="theme-label">{{ themeService.currentTheme() === 'dark' ? 'Espacio' : 'Cielo' }}</span>
+      <span class="theme-label">{{ (themeService.currentTheme() === 'dark' ? 'theme.dark' : 'theme.light') | translate }}</span>
     </button>
   `,
   styles: [`

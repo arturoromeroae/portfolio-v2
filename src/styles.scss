@@ -868,6 +868,7 @@ body.lang-changing {
   .badge-number,
   .badge-text,
   .status-label,
+  .theme-label,
   .tab-company,
   .tab-period,
   .current-badge,
@@ -1214,6 +1215,335 @@ body.light-theme {
       border-color: rgba(2, 132, 199, 0.25);
       color: #334155;
       font-weight: 600;
+    }
+  }
+
+  // Availability Section in Light Mode
+  .availability {
+    .status-indicator {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 253, 244, 0.92) 100%);
+      border: 1.5px solid rgba(16, 185, 129, 0.45);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.18), inset 0 1.5px 2px #ffffff;
+      color: #047857;
+      font-weight: 800;
+
+      .status-dot {
+        background: #059669;
+        box-shadow: 0 0 8px #059669;
+      }
+    }
+
+    .avail-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.72) 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 14px 36px -6px rgba(2, 132, 199, 0.14), inset 0 1.5px 2px #ffffff;
+
+      &:hover {
+        background: #ffffff;
+        border-color: #ffffff;
+        transform: translateY(-4px);
+        box-shadow: 0 20px 48px -6px rgba(2, 132, 199, 0.24), 0 0 24px rgba(56, 189, 248, 0.3), inset 0 1.5px 2px #ffffff;
+      }
+
+      h3 {
+        color: #0f172a;
+        font-weight: 800;
+      }
+
+      p {
+        color: #1e293b;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // About Section in Light Mode
+  .about {
+    .bento-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.72) 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 16px 36px -8px rgba(2, 132, 199, 0.14), inset 0 1.5px 2px #ffffff;
+
+      &--narrative {
+        .bento-header h3 {
+          color: #0f172a;
+          font-weight: 800;
+        }
+
+        .narrative-text {
+          color: #1e293b;
+          font-weight: 500;
+        }
+      }
+    }
+
+    &__meta-strip {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.1), inset 0 1px 1px #ffffff;
+
+      .meta-item {
+        color: #1e293b;
+        font-weight: 600;
+
+        svg {
+          color: #0284c7;
+        }
+      }
+    }
+
+    .specialty-pill {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(2, 132, 199, 0.25);
+      color: #0f172a;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08), inset 0 1px 1px #ffffff;
+
+      &:hover {
+        background: #ffffff;
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+    }
+
+    .stat-box {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.85) 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.1), inset 0 1px 1px #ffffff;
+
+      .stat-value {
+        color: #0f172a;
+        font-weight: 800;
+      }
+
+      .stat-caption {
+        color: #334155;
+        font-weight: 600;
+      }
+    }
+
+    .pillars-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(240, 249, 255, 0.75) 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.12), inset 0 1.5px 2px #ffffff;
+
+      .pillars-header .pillars-tag {
+        color: #0369a1;
+        font-weight: 800;
+      }
+
+      .pillar-item .pillar-bullet {
+        background: rgba(2, 132, 199, 0.15);
+        border-color: rgba(2, 132, 199, 0.3);
+        color: #0284c7;
+      }
+
+      .pillar-item .pillar-info {
+        strong {
+          color: #0f172a;
+          font-weight: 700;
+        }
+
+        p {
+          color: #1e293b;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  // Technologies Section in Light Mode
+  .technologies {
+    .tech-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.72) 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 14px 36px -6px rgba(2, 132, 199, 0.14), inset 0 1.5px 2px #ffffff;
+
+      &:hover {
+        background: #ffffff;
+        border-color: #ffffff;
+        box-shadow: 0 20px 48px -6px rgba(2, 132, 199, 0.24), 0 0 24px rgba(56, 189, 248, 0.3), inset 0 1.5px 2px #ffffff;
+      }
+    }
+
+    .category-header {
+      border-bottom-color: rgba(2, 132, 199, 0.15);
+
+      .category-icon {
+        background: rgba(2, 132, 199, 0.15);
+        border-color: rgba(2, 132, 199, 0.3);
+        color: #0284c7;
+      }
+
+      h3 {
+        color: #0f172a;
+        font-weight: 800;
+      }
+
+      .category-count {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(2, 132, 199, 0.25);
+        color: #0284c7;
+        font-weight: 700;
+      }
+    }
+
+    .tech-chip {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(2, 132, 199, 0.16);
+      box-shadow: inset 0 1px 1px #ffffff;
+
+      .tech-name {
+        color: #0f172a;
+        font-weight: 700;
+      }
+
+      .tech-level-tag {
+        background: rgba(2, 132, 199, 0.12);
+        color: #0369a1;
+        font-weight: 700;
+      }
+
+      &:hover {
+        background: #ffffff;
+        border-color: var(--accent);
+        box-shadow: inset 0 1px 1.5px #ffffff, 0 4px 12px rgba(2, 132, 199, 0.15);
+      }
+    }
+  }
+
+  // Projects Section in Light Mode
+  .projects {
+    .project-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.72) 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 16px 36px -8px rgba(2, 132, 199, 0.16), inset 0 1.5px 2px #ffffff;
+
+      &:hover {
+        border-color: #ffffff;
+        background: #ffffff;
+        box-shadow: 0 24px 50px -10px rgba(2, 132, 199, 0.26), 0 0 28px rgba(56, 189, 248, 0.35), inset 0 1.5px 2px #ffffff;
+      }
+
+      &__visual {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(240, 249, 255, 0.45) 100%);
+        border-color: rgba(255, 255, 255, 0.9);
+      }
+
+      &__body {
+        h3 {
+          color: #0f172a;
+          font-weight: 800;
+        }
+
+        p {
+          color: #1e293b;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .blueprint__diagram {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(2, 132, 199, 0.2);
+      box-shadow: inset 0 1px 1px #ffffff;
+
+      .diagram-flow .node {
+        background: #ffffff;
+        border-color: rgba(2, 132, 199, 0.28);
+        color: #0f172a;
+        font-weight: 700;
+
+        &.core {
+          background: rgba(2, 132, 199, 0.18);
+          border-color: var(--accent);
+          color: #0284c7;
+        }
+      }
+
+      .arrow {
+        color: #64748b;
+        font-weight: 700;
+      }
+
+      .diagram-specs {
+        color: #475569;
+        font-weight: 600;
+        border-top-color: rgba(2, 132, 199, 0.15);
+      }
+    }
+
+    .project-links .private-badge {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(2, 132, 199, 0.25);
+      color: #334155;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08), inset 0 1px 1px #ffffff;
+    }
+  }
+
+  // Certifications Section in Light Mode
+  .certifications {
+    .cert-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.72) 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 12px 30px -6px rgba(2, 132, 199, 0.14), inset 0 1.5px 2px #ffffff;
+
+      &:hover {
+        background: #ffffff;
+        border-color: var(--cert-color, var(--accent));
+        box-shadow: 0 18px 42px -6px rgba(2, 132, 199, 0.24), 0 0 24px color-mix(in srgb, var(--cert-color, var(--accent)) 25%, transparent), inset 0 1.5px 2px #ffffff;
+      }
+
+      h3 {
+        color: #0f172a;
+        font-weight: 800;
+      }
+
+      .cert-year {
+        color: #475569;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // Footer in Light Mode
+  .footer {
+    background: rgba(235, 248, 255, 0.85);
+    border-top-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 -8px 32px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    &__brand p, &__copy span {
+      color: #334155;
+      font-weight: 500;
+    }
+
+    &__links a {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(255, 255, 255, 0.95);
+      color: #0f172a;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12), inset 0 1px 1px #ffffff;
+
+      &:hover {
+        background: #ffffff;
+        color: var(--accent);
+        box-shadow: 0 6px 18px rgba(2, 132, 199, 0.2), inset 0 1px 1px #ffffff;
+      }
+    }
+
+    .footer-logo {
+      .logo-mark {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.85) 100%);
+        border-color: rgba(255, 255, 255, 0.95);
+        color: #0f172a;
+        font-weight: 800;
+        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12), inset 0 1px 1px #ffffff;
+      }
+
+      .logo-name {
+        color: #0f172a;
+        font-weight: 800;
+      }
     }
   }
 

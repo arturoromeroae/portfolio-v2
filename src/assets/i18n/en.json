@@ -12,6 +12,14 @@
     "contact": "Contact",
     "download_cv": "Download CV"
   },
+  "theme": {
+    "dark": "Space",
+    "light": "Sky",
+    "aria_dark": "Switch to light mode (Sky)",
+    "aria_light": "Switch to dark mode (Space)",
+    "title_dark": "Activate Sunny Sky",
+    "title_light": "Activate Starry Space"
+  },
   "hero": {
     "greeting": "Hi, I'm",
     "role": "Senior Full Stack Developer",

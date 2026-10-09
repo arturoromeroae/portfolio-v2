@@ -12,6 +12,14 @@
     "contact": "Contacto",
     "download_cv": "Descargar CV"
   },
+  "theme": {
+    "dark": "Espacio",
+    "light": "Cielo",
+    "aria_dark": "Cambiar a modo claro (Cielo)",
+    "aria_light": "Cambiar a modo oscuro (Espacio)",
+    "title_dark": "Activar Cielo Soleado",
+    "title_light": "Activar Espacio Estelar"
+  },
   "hero": {
     "greeting": "Hola, soy",
     "role": "Senior Full Stack Developer",
