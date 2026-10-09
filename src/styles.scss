@@ -399,3 +399,417 @@ input, textarea {
     radial-gradient(circle, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 100% 100%, 28px 28px;
 }
+
+// ─── Contextual Section Ambient Lighting ──────────────────────────────────────
+.section {
+  &.about::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(850px, 90vw);
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(56, 189, 248, 0.09) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &.technologies::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(850px, 90vw);
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &.experience::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(850px, 90vw);
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &.projects::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(850px, 90vw);
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(99, 102, 241, 0.12) 0%, rgba(236, 72, 153, 0.06) 40%, transparent 75%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &.certifications::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(850px, 90vw);
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &.availability::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(850px, 90vw);
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &.contact::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(850px, 90vw);
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(245, 158, 11, 0.08) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 75%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+// ─── Scroll Reveal Section Transitions ─────────────────────────────────────────
+body.reveal-enabled {
+  .section {
+    // 1. Section Header Animation
+    .section-header {
+      opacity: 0;
+      transform: translateY(32px);
+      filter: blur(6px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+
+      .section-label {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.9);
+        transition: all 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 0.12s;
+      }
+
+      h2 {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
+      }
+
+      p {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.32s;
+      }
+    }
+
+    // 2. Bento cards in About
+    .about__bento {
+      .bento-card {
+        opacity: 0;
+        transform: translateY(34px) scale(0.98);
+        transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &--narrative { transition-delay: 0.18s; }
+        &--stats     { transition-delay: 0.32s; }
+      }
+    }
+
+    // 3. Tech cards in Technologies
+    .tech-grid {
+      .tech-card {
+        opacity: 0;
+        transform: translateY(28px) scale(0.97);
+        transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &:nth-child(1) { transition-delay: 0.08s; }
+        &:nth-child(2) { transition-delay: 0.15s; }
+        &:nth-child(3) { transition-delay: 0.22s; }
+        &:nth-child(4) { transition-delay: 0.29s; }
+        &:nth-child(5) { transition-delay: 0.36s; }
+        &:nth-child(6) { transition-delay: 0.43s; }
+        &:nth-child(7) { transition-delay: 0.50s; }
+      }
+    }
+
+    // 4. Experience timeline
+    .experience__layout {
+      .experience__tabs {
+        opacity: 0;
+        transform: translateX(-28px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+      }
+      .experience__panel {
+        opacity: 0;
+        transform: translateX(28px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.28s;
+      }
+    }
+
+    // 5. Projects
+    .projects-grid {
+      .project-card {
+        opacity: 0;
+        transform: translateY(38px) scale(0.98);
+        transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &:nth-child(1) { transition-delay: 0.12s; }
+        &:nth-child(2) { transition-delay: 0.25s; }
+        &:nth-child(3) { transition-delay: 0.38s; }
+        &:nth-child(4) { transition-delay: 0.51s; }
+      }
+    }
+
+    // 6. Certifications
+    .certs-grid {
+      .cert-card {
+        opacity: 0;
+        transform: translateY(26px) scale(0.96);
+        transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &:nth-child(1) { transition-delay: 0.08s; }
+        &:nth-child(2) { transition-delay: 0.16s; }
+        &:nth-child(3) { transition-delay: 0.24s; }
+        &:nth-child(4) { transition-delay: 0.32s; }
+        &:nth-child(5) { transition-delay: 0.40s; }
+        &:nth-child(6) { transition-delay: 0.48s; }
+      }
+    }
+
+    // 7. Availability
+    .availability__status {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+    }
+    .availability__grid .avail-card {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+
+      &:nth-child(1) { transition-delay: 0.18s; }
+      &:nth-child(2) { transition-delay: 0.30s; }
+      &:nth-child(3) { transition-delay: 0.42s; }
+    }
+    .availability__cta {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: all 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.48s;
+    }
+
+    // 8. Contact
+    .contact__layout {
+      .contact__form-wrap {
+        opacity: 0;
+        transform: translateX(-28px);
+        transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+      }
+      .contact__info {
+        opacity: 0;
+        transform: translateX(28px);
+        transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.28s;
+      }
+    }
+
+    // ─── ACTIVE STATE WHEN IN VIEW ─────────────────────────────────────────────
+    &.in-view {
+      .section-header {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+
+        .section-label {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+        h2 {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        p {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .about__bento .bento-card {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .tech-grid .tech-card {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .experience__layout {
+        .experience__tabs, .experience__panel {
+          opacity: 1;
+          transform: translate(0);
+        }
+      }
+
+      .projects-grid .project-card {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .certs-grid .cert-card {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .availability__status {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .availability__grid .avail-card {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .availability__cta {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .contact__layout {
+        .contact__form-wrap, .contact__info {
+          opacity: 1;
+          transform: translate(0);
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.reveal-enabled .section {
+    .section-header,
+    .section-header .section-label,
+    .section-header h2,
+    .section-header p,
+    .about__bento .bento-card,
+    .tech-grid .tech-card,
+    .experience__layout .experience__tabs,
+    .experience__layout .experience__panel,
+    .projects-grid .project-card,
+    .certs-grid .cert-card,
+    .availability__status,
+    .availability__grid .avail-card,
+    .availability__cta,
+    .contact__layout .contact__form-wrap,
+    .contact__layout .contact__info {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+      transition: none !important;
+    }
+  }
+
+  body.lang-changing * {
+    animation: none !important;
+  }
+}
+
+// ─── Language Change Dynamic Text Animation ──────────────────────────────────
+@keyframes langTextSwap {
+  0% {
+    opacity: 0.15;
+    transform: translateY(3px) scale(0.995);
+    filter: blur(4px);
+    text-shadow: 0 0 12px rgba(99, 102, 241, 0.7);
+  }
+  60% {
+    opacity: 0.85;
+    filter: blur(1px);
+    text-shadow: 0 0 4px rgba(168, 85, 247, 0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    text-shadow: none;
+  }
+}
+
+body.lang-changing {
+  h1, h2, h3, h4, h5, h6,
+  p,
+  .section-label,
+  .bento-badge,
+  .pillars-tag,
+  .blueprint__tag,
+  .blueprint__status,
+  .private-badge,
+  .btn,
+  .nav-link,
+  .meta-tag,
+  .badge-content,
+  .badge-number,
+  .badge-text,
+  .status-label,
+  .tab-company,
+  .tab-period,
+  .current-badge,
+  .tech-name,
+  .tech-level-tag,
+  .cert-issuer,
+  .cert-year,
+  .resp-list li,
+  .contact-link span,
+  .location-card,
+  .stat-caption,
+  .specialties-title,
+  .pill-text,
+  .avail-card p,
+  .avail-card h3,
+  .scroll-text,
+  .hero__greeting,
+  .footer__brand p,
+  .footer__copy span {
+    animation: langTextSwap 0.44s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+

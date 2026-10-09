@@ -20,6 +20,18 @@ export class LanguageService {
   }
 
   switchLang(lang: SupportedLang): void {
+    if (this.currentLang() === lang) return;
+
+    if (typeof document !== 'undefined') {
+      document.body.classList.remove('lang-changing');
+      // Trigger browser reflow so CSS animation restarts seamlessly
+      void document.body.offsetWidth;
+      document.body.classList.add('lang-changing');
+      setTimeout(() => {
+        document.body.classList.remove('lang-changing');
+      }, 480);
+    }
+
     this.currentLang.set(lang);
     localStorage.setItem(this.STORAGE_KEY, lang);
     this.applyLang(lang);

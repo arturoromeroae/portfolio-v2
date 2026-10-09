@@ -30,52 +30,56 @@
 
       <!-- Content panel -->
       @let job = jobs[activeJob()];
-      <div class="experience__panel" role="tabpanel">
+      <div class="experience__panel" role="tabpanel" [style.--job-accent]="job.color">
+        @for (item of [job]; track activeJob()) {
+          <div class="panel-animated-wrap">
 
-        <div class="panel-header">
-          <div class="panel-title">
-            <h3>{{ (job.prefix + '.role') | translate }}</h3>
-            <span class="at">&#64;</span>
-            <span class="company-name" [style.color]="job.color">
-              {{ (job.prefix + '.company') | translate }}
-            </span>
+            <div class="panel-header">
+              <div class="panel-title">
+                <h3>{{ (item.prefix + '.role') | translate }}</h3>
+                <span class="at">&#64;</span>
+                <span class="company-name" [style.color]="item.color">
+                  {{ (item.prefix + '.company') | translate }}
+                </span>
+              </div>
+              <div class="panel-meta">
+                <span class="meta-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+                  </svg>
+                  {{ (item.prefix + '.period') | translate }}
+                </span>
+                <span class="meta-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  {{ (item.prefix + '.location') | translate }}
+                </span>
+              </div>
+            </div>
+
+            <p class="panel-description">{{ (item.prefix + '.description') | translate }}</p>
+
+            <h4 class="resp-title">{{ 'experience.responsibilities' | translate }}</h4>
+            <ul class="resp-list">
+              @for (resp of item.responsibilities; track resp) {
+                <li class="resp-item-animated">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  {{ resp | translate }}
+                </li>
+              }
+            </ul>
+
+            <div class="tech-tags">
+              @for (tech of item.techs; track tech) {
+                <span class="tech-badge tech-badge-pop">{{ tech }}</span>
+              }
+            </div>
+
           </div>
-          <div class="panel-meta">
-            <span class="meta-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
-              </svg>
-              {{ (job.prefix + '.period') | translate }}
-            </span>
-            <span class="meta-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
-              </svg>
-              {{ (job.prefix + '.location') | translate }}
-            </span>
-          </div>
-        </div>
-
-        <p class="panel-description">{{ (job.prefix + '.description') | translate }}</p>
-
-        <h4 class="resp-title">{{ 'experience.responsibilities' | translate }}</h4>
-        <ul class="resp-list">
-          @for (resp of job.responsibilities; track resp) {
-            <li>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              {{ resp | translate }}
-            </li>
-          }
-        </ul>
-
-        <div class="tech-tags">
-          @for (tech of job.techs; track tech) {
-            <span class="tech-badge">{{ tech }}</span>
-          }
-        </div>
-
+        }
       </div>
 
     </div>

@@ -48,12 +48,20 @@ import { LanguageService, SupportedLang } from '../../../core/services/language.
       &.active {
         background: var(--accent);
         color: white;
+        box-shadow: 0 0 12px rgba(99, 102, 241, 0.45);
+        animation: btnPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
 
       &:not(.active):hover {
         color: var(--text-primary);
         background: var(--bg-glass);
       }
+    }
+
+    @keyframes btnPop {
+      0%   { transform: scale(0.9); }
+      55%  { transform: scale(1.08); }
+      100% { transform: scale(1); }
     }
   `]
 })
