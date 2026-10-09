@@ -23,9 +23,11 @@ import { Component, HostListener, signal } from '@angular/core';
       width: 48px;
       height: 48px;
       border-radius: var(--radius-full, 9999px);
-      background: var(--bg-card, #161616);
-      border: 1px solid var(--border-strong, rgba(255,255,255,0.15));
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       color: var(--text-secondary, #a1a1a1);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -38,9 +40,10 @@ import { Component, HostListener, signal } from '@angular/core';
                   visibility var(--transition-base, 250ms ease), 
                   color var(--transition-fast, 150ms ease), 
                   border-color var(--transition-fast, 150ms ease),
+                  background var(--transition-fast, 150ms ease),
                   box-shadow var(--transition-base, 250ms ease);
       z-index: 90;
-      box-shadow: var(--shadow-lg, 0 8px 32px rgba(0,0,0,0.5));
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.3);
     }
 
     .scroll-to-top.visible {
@@ -50,9 +53,11 @@ import { Component, HostListener, signal } from '@angular/core';
     }
 
     .scroll-to-top:hover {
-      color: var(--text-primary, #ededed);
+      color: #ffffff;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.05) 100%);
       border-color: var(--accent, #6366f1);
-      box-shadow: var(--shadow-glow, 0 0 20px rgba(99,102,241,0.25));
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 24px rgba(99, 102, 241, 0.3);
+      transform: translateY(-2px);
     }
 
     @media (max-width: 768px) {

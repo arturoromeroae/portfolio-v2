@@ -17,6 +17,7 @@ export class LanguageService {
     this.translate.addLangs(['es', 'en']);
     this.translate.setDefaultLang('es');
     this.applyLang(this.currentLang());
+    this.listenToSystemLanguageChanges();
   }
 
   switchLang(lang: SupportedLang): void {
@@ -33,7 +34,9 @@ export class LanguageService {
     }
 
     this.currentLang.set(lang);
-    localStorage.setItem(this.STORAGE_KEY, lang);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(this.STORAGE_KEY, lang);
+    }
     this.applyLang(lang);
   }
 
@@ -48,13 +51,42 @@ export class LanguageService {
         }
       });
     });
-    document.documentElement.lang = lang;
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = lang;
+    }
   }
 
   private getInitialLang(): SupportedLang {
-    const stored = localStorage.getItem(this.STORAGE_KEY) as SupportedLang;
-    if (stored === 'es' || stored === 'en') return stored;
-    const browser = navigator.language.slice(0, 2).toLowerCase();
-    return browser === 'es' ? 'es' : 'en';
+    if (typeof localStorage !== 'undefined') {
+      const stored = localStorage.getItem(this.STORAGE_KEY) as SupportedLang;
+      if (stored === 'es' || stored === 'en') return stored;
+    }
+    return this.detectDeviceLanguage();
+  }
+
+  private detectDeviceLanguage(): SupportedLang {
+    if (typeof navigator === 'undefined') return 'es';
+    // Check navigator.languages list or navigator.language
+    const languages = navigator.languages || [navigator.language];
+    for (const lang of languages) {
+      if (lang && lang.toLowerCase().startsWith('es')) {
+        return 'es';
+      }
+    }
+    return 'en';
+  }
+
+  private listenToSystemLanguageChanges(): void {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('languagechange', () => {
+        const hasStoredPreference = localStorage.getItem(this.STORAGE_KEY);
+        if (!hasStoredPreference) {
+          const detected = this.detectDeviceLanguage();
+          if (detected !== this.currentLang()) {
+            this.switchLang(detected);
+          }
+        }
+      });
+    }
   }
 }

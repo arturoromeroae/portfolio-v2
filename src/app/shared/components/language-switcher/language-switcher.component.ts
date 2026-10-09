@@ -25,10 +25,13 @@ import { LanguageService, SupportedLang } from '../../../core/services/language.
       display: flex;
       align-items: center;
       gap: 2px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border: 1px solid var(--border-glass);
       border-radius: var(--radius-md);
       padding: 3px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
     }
 
     .lang-btn {
@@ -36,7 +39,7 @@ import { LanguageService, SupportedLang } from '../../../core/services/language.
       border-radius: 6px;
       font-size: var(--text-xs);
       font-weight: 600;
-      color: var(--text-tertiary);
+      color: var(--text-secondary);
       transition: all var(--transition-fast);
       cursor: pointer;
       border: none;
@@ -46,15 +49,15 @@ import { LanguageService, SupportedLang } from '../../../core/services/language.
       gap: 4px;
 
       &.active {
-        background: var(--accent);
+        background: linear-gradient(180deg, #6366f1 0%, #4f46e5 100%);
         color: white;
-        box-shadow: 0 0 12px rgba(99, 102, 241, 0.45);
+        box-shadow: 0 2px 10px rgba(99, 102, 241, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
         animation: btnPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
 
       &:not(.active):hover {
         color: var(--text-primary);
-        background: var(--bg-glass);
+        background: rgba(255, 255, 255, 0.08);
       }
     }
 

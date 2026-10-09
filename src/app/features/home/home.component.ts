@@ -14,7 +14,6 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
 import { ScrollProgressComponent } from '../../shared/components/scroll-progress/scroll-progress.component';
 import { InteractiveBackgroundComponent } from '../../shared/components/interactive-background/interactive-background.component';
 import { ScrollToTopComponent } from '../../shared/components/scroll-to-top/scroll-to-top.component';
-import { SectionDividerComponent } from '../../shared/components/section-divider/section-divider.component';
 
 @Component({
   selector: 'app-home',
@@ -33,7 +32,6 @@ import { SectionDividerComponent } from '../../shared/components/section-divider
     ScrollProgressComponent,
     InteractiveBackgroundComponent,
     ScrollToTopComponent,
-    SectionDividerComponent,
   ],
   template: `
     <app-interactive-background />
@@ -41,19 +39,12 @@ import { SectionDividerComponent } from '../../shared/components/section-divider
     <app-header />
     <main class="home-main">
       <app-hero id="hero" />
-      <app-section-divider variant="cyan" />
       <app-about id="about" />
-      <app-section-divider variant="brand" />
       <app-technologies id="technologies" />
-      <app-section-divider variant="purple" />
       <app-experience id="experience" />
-      <app-section-divider variant="brand" />
       <app-projects id="projects" />
-      <app-section-divider variant="cyan" />
       <app-certifications id="certifications" />
-      <app-section-divider variant="emerald" />
       <app-availability id="availability" />
-      <app-section-divider variant="amber" />
       <app-contact id="contact" />
     </main>
     <app-footer />

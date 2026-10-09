@@ -1,5 +1,5 @@
 .certifications {
-  background: var(--bg-secondary);
+  background: transparent;
 }
 
 .certs-grid {
@@ -10,23 +10,26 @@
 
 .cert-card {
   position: relative;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--glass-surface);
+  border: 1px solid var(--border-glass);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   display: flex;
   align-items: flex-start;
   gap: var(--space-4);
   overflow: hidden;
-  backdrop-filter: blur(14px);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
   transition: all var(--transition-base);
 
   &:hover {
     border-color: var(--cert-color, var(--accent));
+    background: var(--glass-surface-hover);
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px -8px rgba(0,0,0,0.6);
+    box-shadow: 0 18px 40px -8px rgba(0, 0, 0, 0.45), inset 0 1px 2px 0 rgba(255, 255, 255, 0.3), 0 0 25px color-mix(in srgb, var(--cert-color, var(--accent)) 20%, transparent);
 
-    .cert-card__glow { opacity: 0.08; }
+    .cert-card__glow { opacity: 0.15; }
     .cert-card__icon { color: var(--cert-color, var(--accent)); }
   }
 

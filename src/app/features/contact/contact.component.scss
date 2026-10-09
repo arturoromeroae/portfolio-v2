@@ -1,39 +1,135 @@
-.turnstile-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+.contact {
+  position: relative;
+  background: transparent;
+  padding: var(--space-16) 0 var(--space-24);
+
+  // ─── Subtle Ambient Aura matching the Dark Portal aesthetic ───────────────
+  &__ambient-aura {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(1000px, 92vw);
+    height: min(600px, 80%);
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.18) 0%, rgba(56, 189, 248, 0.09) 45%, transparent 72%);
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
-.contact {
-  background: var(--bg-secondary);
+// ─── Apple Liquid Glass Window / Stage Container ──────────────────────────────
+.contact-container {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 40%, rgba(255, 255, 255, 0.06) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  padding: var(--space-12) var(--space-10);
+  backdrop-filter: blur(36px) saturate(200%) brightness(106%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%) brightness(106%);
+  box-shadow:
+    0 30px 90px -20px rgba(0, 0, 0, 0.65),
+    inset 0 2px 2.5px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -2px 3px 0 rgba(0, 0, 0, 0.2),
+    0 0 50px rgba(99, 102, 241, 0.12);
+  transition: all var(--transition-base);
 
-  &__layout {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: var(--space-12);
-    align-items: start;
-
-    @media (max-width: 900px) {
-      grid-template-columns: 1fr;
-    }
+  // Top specular light glare reflection (Signature Apple Glass Highlight)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    border-radius: 9999px;
+    pointer-events: none;
   }
 
-  &__info {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-    position: sticky;
-    top: 90px;
+  @media (max-width: 960px) {
+    padding: var(--space-10) var(--space-6);
+    border-radius: 30px;
+  }
 
-    @media (max-width: 900px) {
-      position: static;
-    }
+  @media (max-width: 600px) {
+    padding: var(--space-8) var(--space-4);
+    border-radius: 24px;
+  }
+}
 
-    h3 {
-      font-size: var(--text-lg);
-      font-weight: 700;
-      color: var(--text-secondary);
-    }
+// ─── Section Header ──────────────────────────────────────────────────────────
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+
+  .section-label {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1px solid var(--border-strong);
+    color: var(--accent-hover);
+    padding: 0.35rem 0.95rem;
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    margin-bottom: var(--space-3);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-3);
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+// ─── Layout Grid ──────────────────────────────────────────────────────────────
+.contact__layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+// ─── Inner Frosted Glass Form Wrapper ─────────────────────────────────────────
+.contact__form-wrap {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  padding: var(--space-8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.2),
+    0 12px 32px rgba(0, 0, 0, 0.25);
+  transition: all var(--transition-base);
+
+  @media (max-width: 600px) {
+    padding: var(--space-5);
+    border-radius: 20px;
   }
 }
 
@@ -61,58 +157,115 @@
   label {
     font-size: var(--text-xs);
     font-weight: 600;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text-tertiary);
   }
 
   input, textarea {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: var(--space-3) var(--space-4);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 0.8rem 1.1rem;
     font-size: var(--text-sm);
+    font-weight: 500;
     color: var(--text-primary);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow:
+      inset 0 2px 4px rgba(0, 0, 0, 0.2),
+      inset 0 -1px 1px rgba(255, 255, 255, 0.15);
     transition: all var(--transition-base);
     resize: vertical;
 
-    &::placeholder { color: var(--text-tertiary); }
+    &::placeholder {
+      color: var(--text-tertiary);
+    }
 
     &:focus {
       outline: none;
+      background: rgba(255, 255, 255, 0.08);
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-dim);
+      box-shadow:
+        0 0 0 4px var(--accent-dim),
+        0 8px 24px rgba(0, 0, 0, 0.3),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.35);
+      transform: translateY(-1px);
     }
   }
 
   &.error input, &.error textarea {
     border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.2);
   }
 
   .error-msg {
     font-size: var(--text-xs);
+    font-weight: 600;
     color: #ef4444;
   }
 }
 
+.turnstile-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+// ─── Apple Liquid Glass Submit Button ─────────────────────────────────────────
 .submit-btn {
   align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 14px 32px rgba(79, 70, 229, 0.35),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: all var(--transition-base);
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #7c84fc 0%, #6366f1 100%);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow:
+      0 18px 42px rgba(99, 102, 241, 0.5),
+      inset 0 2px 2.5px #ffffff;
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3), inset 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
 
   &:disabled {
-    opacity: 0.6;
+    opacity: 0.65;
     cursor: not-allowed;
   }
 
   .spinner {
-    width: 14px;
-    height: 14px;
-    border: 2px solid rgba(255,255,255,0.3);
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
     border-top-color: white;
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
   }
 }
 
+// ─── Success Message Liquid Glass Card ───────────────────────────────────────
 .success-message {
   display: flex;
   flex-direction: column;
@@ -120,17 +273,50 @@
   justify-content: center;
   gap: var(--space-4);
   padding: var(--space-16);
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
   text-align: center;
   animation: fadeInUp 0.4s ease;
 
-  svg { color: var(--green); }
+  .success-icon-orb {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.3) 0%, rgba(16, 185, 129, 0.1) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green);
+    box-shadow: 0 12px 32px rgba(16, 185, 129, 0.3), inset 0 1.5px 1.5px #ffffff;
+  }
 
   h3 {
-    font-size: var(--text-xl);
-    color: var(--green);
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+}
+
+// ─── Contact Info Column ─────────────────────────────────────────────────────
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: sticky;
+  top: 90px;
+
+  @media (max-width: 960px) {
+    position: static;
+  }
+
+  h3 {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-1);
   }
 }
 
@@ -140,45 +326,126 @@
   gap: var(--space-3);
 }
 
+// ─── Apple Liquid Glass Contact Pill Link (matching the "Focus" capsule) ─────
 .contact-link {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-5);
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
+  gap: var(--space-4);
+  padding: 0.55rem 0.85rem 0.55rem 0.55rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  box-shadow:
+    0 14px 32px -6px rgba(0, 0, 0, 0.35),
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.2);
   transition: all var(--transition-base);
 
-  &:hover {
-    border-color: var(--accent);
+  // 3D Glass Orb icon badge inside pill
+  .link-icon-orb {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1.5px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-hover);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2), inset 0 1px 1px #ffffff;
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+  }
+
+  .link-label {
+    flex: 1;
+    font-size: var(--text-sm);
+    font-weight: 600;
     color: var(--text-primary);
-    transform: translateX(4px);
+    letter-spacing: -0.01em;
   }
 
-  svg:first-child { color: var(--accent); flex-shrink: 0; }
-  span { flex: 1; }
-
-  .arrow {
+  .link-arrow-orb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--text-tertiary);
-    transition: color var(--transition-fast);
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+
+    .arrow {
+      transition: transform var(--transition-fast);
+    }
   }
 
-  &:hover .arrow { color: var(--accent); }
+  &:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.04) 50%, rgba(255, 255, 255, 0.09) 100%);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow:
+      0 18px 42px -6px rgba(0, 0, 0, 0.45),
+      0 0 24px rgba(99, 102, 241, 0.2),
+      inset 0 1.5px 2px rgba(255, 255, 255, 0.45),
+      inset 0 -1.5px 2px rgba(0, 0, 0, 0.2);
+    transform: translateX(6px) scale(1.02);
+
+    .link-icon-orb {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(168, 85, 247, 0.2) 100%);
+      border-color: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4), inset 0 1.5px 2px #ffffff;
+      transform: rotate(6deg) scale(1.06);
+    }
+
+    .link-arrow-orb {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #ffffff;
+      transform: translateX(2px);
+    }
+  }
 }
 
+// ─── Apple Liquid Glass Location Capsule ──────────────────────────────────────
 .location-card {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-5);
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  font-size: var(--text-sm);
+  gap: var(--space-4);
+  padding: 0.55rem 0.85rem 0.55rem 0.55rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  box-shadow:
+    0 14px 32px -6px rgba(0, 0, 0, 0.35),
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.2);
   color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 600;
 
-  svg { color: var(--accent); }
+  .location-icon-orb {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1.5px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 1px #ffffff;
+    flex-shrink: 0;
+  }
 }

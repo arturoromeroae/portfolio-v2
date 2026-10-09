@@ -4,11 +4,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../../core/services/language.service';
 import { PortfolioDataService } from '../../../core/services/portfolio-data.service';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
+import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, TranslateModule, LanguageSwitcherComponent],
+  imports: [CommonModule, TranslateModule, LanguageSwitcherComponent, ThemeSwitcherComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

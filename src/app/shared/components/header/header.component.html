@@ -15,10 +15,14 @@
           {{ item.labelKey | translate }}
         </button>
       }
-      <app-language-switcher />
+      <div class="header__nav-controls">
+        <app-theme-switcher />
+        <app-language-switcher />
+      </div>
     </nav>
 
     <div class="header__actions">
+      <app-theme-switcher class="desktop-only" />
       <app-language-switcher class="desktop-only" />
       <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-label]="'Toggle menu'" [class.active]="menuOpen()">
         <span></span>
