@@ -35,6 +35,7 @@ export interface Project {
   demoUrl?: string;
   codeUrl?: string;
   featured: boolean;
+  typeKey?: string;
 }
 
 export interface Certification {

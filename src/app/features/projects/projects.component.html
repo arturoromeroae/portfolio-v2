@@ -59,7 +59,7 @@
                     <span>Swagger / OpenAPI</span>
                     <span>JWT Auth</span>
                   </div>
-                } @else {
+                } @else if (project.id === 'p4') {
                   <div class="diagram-flow">
                     <span class="node">Angular Client</span>
                     <span class="arrow">⇄</span>
@@ -71,6 +71,30 @@
                     <span>{{ 'projects.p4_scale' | translate }}</span>
                     <span>{{ 'projects.p4_concurrency' | translate }}</span>
                   </div>
+                } @else if (project.id === 'p5') {
+                  <div class="diagram-flow">
+                    <span class="node">Hotel Showcase UI</span>
+                    <span class="arrow">⇄</span>
+                    <span class="node core">Direct-Book PMS</span>
+                    <span class="arrow">⇄</span>
+                    <span class="node">Channel Manager</span>
+                  </div>
+                  <div class="diagram-specs">
+                    <span>{{ 'projects.p5_engine' | translate }}</span>
+                    <span>{{ 'projects.p5_seo' | translate }}</span>
+                  </div>
+                } @else if (project.id === 'p6') {
+                  <div class="diagram-flow">
+                    <span class="node">Next.js UI</span>
+                    <span class="arrow">⇄</span>
+                    <span class="node core">Analysis Request Hub</span>
+                    <span class="arrow">⇄</span>
+                    <span class="node">ISO 9001 Lab</span>
+                  </div>
+                  <div class="diagram-specs">
+                    <span>{{ 'projects.p6_services' | translate }}</span>
+                    <span>{{ 'projects.p6_edge' | translate }}</span>
+                  </div>
                 }
               </div>
             </div>
@@ -80,7 +104,7 @@
           <div class="project-card__body">
             <div class="project-meta">
               <span class="project-index">0{{ i + 1 }}</span>
-              <span class="project-type">Enterprise Solution</span>
+              <span class="project-type">{{ (project.typeKey || 'projects.type_enterprise') | translate }}</span>
             </div>
 
             <h3>{{ project.titleKey | translate }}</h3>

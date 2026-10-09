@@ -138,12 +138,18 @@
     "blueprint_tag": "Arquitectura & Sistema",
     "production": "Producción",
     "confidential": "Entorno Corporativo Confidencial",
+    "type_enterprise": "Solución Empresarial",
+    "type_freelance": "Proyecto Freelance",
     "p1_sync": "Sincronización en tiempo real",
     "p1_batch": "Procesamiento batch",
     "p2_rbac": "RBAC Empresarial",
     "p2_cloud": "Despliegue Cloud",
     "p4_scale": "Escalado Automático",
     "p4_concurrency": "Alta Concurrencia",
+    "p5_engine": "Motor de Reservas Direct-Book",
+    "p5_seo": "SEO & CDN de Alta Velocidad",
+    "p6_services": "Veterinario · Metabarcoding · Agro",
+    "p6_edge": "Next.js & Vercel Edge",
     "view_demo": "Ver Demo",
     "view_code": "Ver Código",
     "p1": {
@@ -161,6 +167,14 @@
     "p4": {
       "title": "Cloud-Based Management System",
       "description": "Sistema de gestión empresarial en la nube con Angular frontend, PHP backend, base de datos PostgreSQL y despliegue en Azure con escalado automático."
+    },
+    "p5": {
+      "title": "Chalet Inn Gatlinburg — Hotel & Booking Platform",
+      "description": "Sitio web y plataforma de reservas para hotel en Gatlinburg, Tennessee. Integración directa con motor de reservas en tiempo real (Direct-Book PMS), optimización de rendimiento, diseño responsivo y posicionamiento SEO con sincronización en Booking.com y TripAdvisor."
+    },
+    "p6": {
+      "title": "CavBio — Laboratorio Biotecnológico & Plataforma de Análisis",
+      "description": "Aplicación web moderna para laboratorio de análisis biotecnológico certificado ISO 9001 (UKAS). Sistema de solicitud de cotizaciones y análisis en línea para servicios veterinarios, metabarcoding (secuenciación de ADN ambiental) y agrícolas, con selector dinámico de tema y arquitectura Next.js."
     }
   },
   "certifications": {

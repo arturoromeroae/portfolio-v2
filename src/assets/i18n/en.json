@@ -138,12 +138,18 @@
     "blueprint_tag": "Architecture & System",
     "production": "Production",
     "confidential": "Confidential Corporate Environment",
+    "type_enterprise": "Enterprise Solution",
+    "type_freelance": "Freelance Project",
     "p1_sync": "Real-time synchronization",
     "p1_batch": "Batch processing",
     "p2_rbac": "Enterprise RBAC",
     "p2_cloud": "Cloud Deployment",
     "p4_scale": "Auto-scaling",
     "p4_concurrency": "High Concurrency",
+    "p5_engine": "Direct-Book Reservation Engine",
+    "p5_seo": "SEO & High-Speed CDN",
+    "p6_services": "Veterinary · Metabarcoding · Agro",
+    "p6_edge": "Next.js & Vercel Edge",
     "view_demo": "View Demo",
     "view_code": "View Code",
     "p1": {
@@ -161,6 +167,14 @@
     "p4": {
       "title": "Cloud-Based Management System",
       "description": "Cloud enterprise management system with Angular frontend, PHP backend, PostgreSQL database and Azure deployment with auto-scaling."
+    },
+    "p5": {
+      "title": "Chalet Inn Gatlinburg — Hotel & Booking Platform",
+      "description": "Hotel website and booking platform for Gatlinburg, Tennessee. Direct real-time booking engine integration (Direct-Book PMS), high-performance optimization, responsive architecture, and SEO strategy with Booking.com & TripAdvisor sync."
+    },
+    "p6": {
+      "title": "CavBio — Biotech Laboratory & Analysis Platform",
+      "description": "Modern web application for an ISO 9001 (UKAS) certified biotechnology laboratory. Online analysis quotation & request system for veterinary, metabarcoding (environmental DNA sequencing) and agricultural services, featuring dynamic dark/light theme switching and Next.js architecture."
     }
   },
   "certifications": {

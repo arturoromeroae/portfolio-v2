@@ -342,6 +342,12 @@ input, textarea {
     }
   }
 
+  &-sm {
+    padding: 0.45rem 0.95rem;
+    font-size: var(--text-xs);
+    border-radius: var(--radius-md);
+  }
+
   &-lg {
     padding: 0.85rem 1.65rem;
     font-size: var(--text-base);
@@ -675,6 +681,8 @@ body.reveal-enabled {
         &:nth-child(2) { transition-delay: 0.25s; }
         &:nth-child(3) { transition-delay: 0.38s; }
         &:nth-child(4) { transition-delay: 0.51s; }
+        &:nth-child(5) { transition-delay: 0.64s; }
+        &:nth-child(6) { transition-delay: 0.77s; }
       }
     }
 
@@ -864,6 +872,7 @@ body.lang-changing {
   .btn,
   .nav-link,
   .meta-tag,
+  .project-type,
   .badge-content,
   .badge-number,
   .badge-text,

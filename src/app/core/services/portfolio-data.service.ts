@@ -48,6 +48,7 @@ export class PortfolioDataService {
       technologies: ['Angular', 'PHP', 'Salesforce', 'PeopleSoft', 'REST API', 'PostgreSQL'],
       image: 'assets/images/project-1.svg',
       featured: true,
+      typeKey: 'projects.type_enterprise',
     },
     {
       id: 'p2',
@@ -56,6 +57,7 @@ export class PortfolioDataService {
       technologies: ['Angular', 'TypeScript', 'Azure', 'Docker', 'JWT', 'SCSS'],
       image: 'assets/images/project-2.svg',
       featured: true,
+      typeKey: 'projects.type_enterprise',
     },
     {
       id: 'p3',
@@ -64,6 +66,7 @@ export class PortfolioDataService {
       technologies: ['Python', 'Django', 'AWS', 'Docker', 'PostgreSQL', 'Swagger'],
       image: 'assets/images/project-3.svg',
       featured: true,
+      typeKey: 'projects.type_enterprise',
     },
     {
       id: 'p4',
@@ -72,6 +75,27 @@ export class PortfolioDataService {
       technologies: ['Angular', 'PHP', 'Azure', 'PostgreSQL', 'Docker', 'REST API'],
       image: 'assets/images/project-4.svg',
       featured: true,
+      typeKey: 'projects.type_enterprise',
+    },
+    {
+      id: 'p5',
+      titleKey: 'projects.p5.title',
+      descriptionKey: 'projects.p5.description',
+      technologies: ['Next.js / React', 'TypeScript', 'Tailwind CSS', 'Booking API', 'SEO'],
+      image: 'assets/images/project-5.svg',
+      demoUrl: 'https://chaletinngatlinburg.com/',
+      featured: true,
+      typeKey: 'projects.type_freelance',
+    },
+    {
+      id: 'p6',
+      titleKey: 'projects.p6.title',
+      descriptionKey: 'projects.p6.description',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel', 'Dark/Light Theme'],
+      image: 'assets/images/project-6.svg',
+      demoUrl: 'https://cavbio-app.vercel.app/',
+      featured: true,
+      typeKey: 'projects.type_freelance',
     },
   ];
 
