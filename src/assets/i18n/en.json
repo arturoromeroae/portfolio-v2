@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Arturo Romero | Senior Full Stack Developer — Angular, Cloud, Enterprise",
+    "description": "Senior Full Stack Developer with 5+ years of experience in Angular, PHP, Python, Azure, AWS, Docker, Salesforce and PeopleSoft. Open to remote, hybrid and international opportunities."
+  },
   "nav": {
     "about": "About",
     "technologies": "Technologies",
@@ -13,20 +17,33 @@
     "role": "Senior Full Stack Developer",
     "tagline": "Building scalable enterprise solutions with Angular, Cloud and critical integrations",
     "available": "Open to new opportunities",
+    "work_mode": "Remote / Hybrid",
+    "exp_years": "5+ Years",
+    "exp_focus": "Architecture & Development",
     "cta_contact": "Get in touch",
     "cta_cv": "Download CV",
     "scroll": "Scroll to explore"
   },
   "about": {
+    "label": "About Me",
     "title": "About Me",
     "subtitle": "Full Stack Developer with enterprise focus",
     "description": "Full Stack Developer with 5+ years of experience designing and building high-impact enterprise applications. Specialized in Angular architectures, integrations with critical platforms like Salesforce and PeopleSoft, and deployments on Azure and AWS.",
+    "bento_badge": "Background & Focus",
+    "bento_title": "Engineering focused on results and software quality",
     "description2": "I have led development teams, conducted code reviews and ensured quality in corporate projects for financial, education and retail sectors. My focus is on writing clean, scalable and well-documented code that solves real business problems.",
     "years_exp": "Years of experience",
     "projects_done": "Projects delivered",
     "companies": "Companies",
     "sectors": "Sectors",
     "sectors_list": "Financial · Education · Retail · Technology",
+    "pillars_tag": "Architecture Philosophy",
+    "pillar_1_title": "Enterprise Scalability",
+    "pillar_1_desc": "Modular structures with Angular and decoupled APIs for high availability.",
+    "pillar_2_title": "Critical Integrations",
+    "pillar_2_desc": "Robust synchronization with Salesforce CRM, PeopleSoft ERP and payment gateways.",
+    "pillar_3_title": "Security & Cloud Native",
+    "pillar_3_desc": "Containerization with Docker, deployments on Azure/AWS and CSP/OWASP security policies.",
     "specialties": "Specialties",
     "specialty_1": "Angular Architecture",
     "specialty_2": "Enterprise Integrations",
@@ -36,6 +53,7 @@
     "specialty_6": "REST APIs & ETL"
   },
   "technologies": {
+    "label": "Stack & Tools",
     "title": "Tech Stack",
     "subtitle": "Technologies I use to build professional solutions",
     "frontend": "Frontend",
@@ -50,9 +68,11 @@
     "intermediate": "Intermediate"
   },
   "experience": {
+    "label": "Career",
     "title": "Professional Experience",
     "subtitle": "Track record in high-impact companies and projects",
     "present": "Present",
+    "current": "Current",
     "responsibilities": "Key responsibilities",
     "seidor": {
       "company": "SEIDOR",
@@ -104,8 +124,18 @@
     }
   },
   "projects": {
+    "label": "Case Studies",
     "title": "Featured Projects",
     "subtitle": "Enterprise solutions built with cutting-edge technology",
+    "blueprint_tag": "Architecture & System",
+    "production": "Production",
+    "confidential": "Confidential Corporate Environment",
+    "p1_sync": "Real-time synchronization",
+    "p1_batch": "Batch processing",
+    "p2_rbac": "Enterprise RBAC",
+    "p2_cloud": "Cloud Deployment",
+    "p4_scale": "Auto-scaling",
+    "p4_concurrency": "High Concurrency",
     "view_demo": "View Demo",
     "view_code": "View Code",
     "p1": {
@@ -126,6 +156,7 @@
     }
   },
   "certifications": {
+    "label": "Credentials",
     "title": "Certifications",
     "subtitle": "Continuous learning in technology and security",
     "c1": "ISC2 Candidate",
@@ -136,6 +167,7 @@
     "c6": "Webpack"
   },
   "availability": {
+    "label": "Status",
     "title": "Availability",
     "subtitle": "Ready for the next challenge",
     "status": "Open to new opportunities",
@@ -148,6 +180,7 @@
     "cta": "Let's talk about your project"
   },
   "contact": {
+    "label": "Contact",
     "title": "Contact",
     "subtitle": "Have a project or opportunity? Let's talk.",
     "name": "Full name",

@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="section-header">
-      <span class="section-label">Casos de Éxito</span>
+      <span class="section-label">{{ 'projects.label' | translate }}</span>
       <h2>{{ 'projects.title' | translate }}</h2>
       <p>{{ 'projects.subtitle' | translate }}</p>
     </div>
@@ -15,10 +15,10 @@
           <div class="project-card__visual">
             <div class="blueprint">
               <div class="blueprint__header">
-                <span class="blueprint__tag">Arquitectura & Sistema</span>
+                <span class="blueprint__tag">{{ 'projects.blueprint_tag' | translate }}</span>
                 <span class="blueprint__status">
                   <span class="status-pulse"></span>
-                  Producción
+                  {{ 'projects.production' | translate }}
                 </span>
               </div>
 
@@ -32,8 +32,8 @@
                     <span class="node">PeopleSoft ERP</span>
                   </div>
                   <div class="diagram-specs">
-                    <span>Sincronización en tiempo real</span>
-                    <span>Procesamiento batch</span>
+                    <span>{{ 'projects.p1_sync' | translate }}</span>
+                    <span>{{ 'projects.p1_batch' | translate }}</span>
                   </div>
                 } @else if (project.id === 'p2') {
                   <div class="diagram-flow">
@@ -44,8 +44,8 @@
                     <span class="node">Docker Containers</span>
                   </div>
                   <div class="diagram-specs">
-                    <span>RBAC Empresarial</span>
-                    <span>Cloud Deployment</span>
+                    <span>{{ 'projects.p2_rbac' | translate }}</span>
+                    <span>{{ 'projects.p2_cloud' | translate }}</span>
                   </div>
                 } @else if (project.id === 'p3') {
                   <div class="diagram-flow">
@@ -68,8 +68,8 @@
                     <span class="node">Azure Cloud DB</span>
                   </div>
                   <div class="diagram-specs">
-                    <span>Escalado Automático</span>
-                    <span>Alta Concurrencia</span>
+                    <span>{{ 'projects.p4_scale' | translate }}</span>
+                    <span>{{ 'projects.p4_concurrency' | translate }}</span>
                   </div>
                 }
               </div>
@@ -105,7 +105,7 @@
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
                   </svg>
-                  Entorno Corporativo Confidencial
+                  {{ 'projects.confidential' | translate }}
                 </span>
               }
 

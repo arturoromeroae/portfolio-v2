@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Arturo Romero | Senior Full Stack Developer — Angular, Cloud, Enterprise",
+    "description": "Senior Full Stack Developer con más de 5 años de experiencia en Angular, PHP, Python, Azure, AWS, Docker, Salesforce y PeopleSoft. Disponible para posiciones remotas, híbridas e internacionales."
+  },
   "nav": {
     "about": "Sobre mí",
     "technologies": "Tecnologías",
@@ -13,20 +17,33 @@
     "role": "Senior Full Stack Developer",
     "tagline": "Construyendo soluciones empresariales escalables con Angular, Cloud e integraciones críticas",
     "available": "Disponible para nuevas oportunidades",
+    "work_mode": "Remoto / Híbrido",
+    "exp_years": "5+ Años",
+    "exp_focus": "Arquitectura & Desarrollo",
     "cta_contact": "Contactar",
     "cta_cv": "Descargar CV",
     "scroll": "Scroll para explorar"
   },
   "about": {
+    "label": "Sobre mí",
     "title": "Sobre mí",
     "subtitle": "Desarrollador Full Stack con enfoque empresarial",
     "description": "Desarrollador Full Stack con más de 5 años de experiencia diseñando y construyendo aplicaciones empresariales de alto impacto. Especializado en arquitecturas Angular, integraciones con plataformas críticas como Salesforce y PeopleSoft, y despliegues en Azure y AWS.",
+    "bento_badge": "Trayectoria & Enfoque",
+    "bento_title": "Ingeniería centrada en resultados y calidad de software",
     "description2": "He liderado equipos de desarrollo, conducido revisiones de código y asegurado la calidad en proyectos corporativos para sectores financiero, educativo y de retail. Mi foco está en escribir código limpio, escalable y bien documentado que resuelva problemas reales de negocio.",
     "years_exp": "Años de experiencia",
     "projects_done": "Proyectos entregados",
     "companies": "Empresas",
     "sectors": "Sectores",
     "sectors_list": "Financiero · Educación · Retail · Tecnología",
+    "pillars_tag": "Filosofía de Arquitectura",
+    "pillar_1_title": "Escalabilidad Empresarial",
+    "pillar_1_desc": "Estructuras modulares con Angular y APIs desacopladas para alta disponibilidad.",
+    "pillar_2_title": "Integraciones Críticas",
+    "pillar_2_desc": "Sincronización robusta con Salesforce CRM, PeopleSoft ERP y pasarelas de pago.",
+    "pillar_3_title": "Seguridad & Cloud Native",
+    "pillar_3_desc": "Contenerización con Docker, despliegues en Azure/AWS y directivas de seguridad CSP/OWASP.",
     "specialties": "Especialidades",
     "specialty_1": "Arquitectura Angular",
     "specialty_2": "Integraciones Empresariales",
@@ -36,6 +53,7 @@
     "specialty_6": "APIs REST & ETL"
   },
   "technologies": {
+    "label": "Stack & Herramientas",
     "title": "Stack Tecnológico",
     "subtitle": "Tecnologías con las que construyo soluciones profesionales",
     "frontend": "Frontend",
@@ -50,9 +68,11 @@
     "intermediate": "Intermedio"
   },
   "experience": {
+    "label": "Trayectoria",
     "title": "Experiencia Profesional",
     "subtitle": "Trayectoria en empresas y proyectos de alto impacto",
     "present": "Presente",
+    "current": "Actual",
     "responsibilities": "Responsabilidades clave",
     "seidor": {
       "company": "SEIDOR",
@@ -104,8 +124,18 @@
     }
   },
   "projects": {
+    "label": "Casos de Éxito",
     "title": "Proyectos Destacados",
     "subtitle": "Soluciones empresariales construidas con tecnología de vanguardia",
+    "blueprint_tag": "Arquitectura & Sistema",
+    "production": "Producción",
+    "confidential": "Entorno Corporativo Confidencial",
+    "p1_sync": "Sincronización en tiempo real",
+    "p1_batch": "Procesamiento batch",
+    "p2_rbac": "RBAC Empresarial",
+    "p2_cloud": "Despliegue Cloud",
+    "p4_scale": "Escalado Automático",
+    "p4_concurrency": "Alta Concurrencia",
     "view_demo": "Ver Demo",
     "view_code": "Ver Código",
     "p1": {
@@ -126,6 +156,7 @@
     }
   },
   "certifications": {
+    "label": "Credenciales",
     "title": "Certificaciones",
     "subtitle": "Formación continua en tecnología y seguridad",
     "c1": "ISC2 Candidate",
@@ -136,6 +167,7 @@
     "c6": "Webpack"
   },
   "availability": {
+    "label": "Disponibilidad",
     "title": "Disponibilidad",
     "subtitle": "Listo para el siguiente desafío",
     "status": "Abierto a nuevas oportunidades",
@@ -148,6 +180,7 @@
     "cta": "Hablemos de tu proyecto"
   },
   "contact": {
+    "label": "Contacto",
     "title": "Contacto",
     "subtitle": "¿Tienes un proyecto o una oportunidad? Hablemos.",
     "name": "Nombre completo",

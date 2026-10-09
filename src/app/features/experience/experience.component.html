@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="section-header">
-      <span class="section-label">Career</span>
+      <span class="section-label">{{ 'experience.label' | translate }}</span>
       <h2>{{ 'experience.title' | translate }}</h2>
       <p>{{ 'experience.subtitle' | translate }}</p>
     </div>
@@ -22,7 +22,7 @@
             <span class="tab-company">{{ (job.prefix + '.company') | translate }}</span>
             <span class="tab-period">{{ (job.prefix + '.period') | translate }}</span>
             @if (job.current) {
-              <span class="current-badge">Current</span>
+              <span class="current-badge">{{ 'experience.current' | translate }}</span>
             }
           </button>
         }
