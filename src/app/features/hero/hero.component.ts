@@ -52,6 +52,14 @@ export class HeroComponent implements OnInit {
     }
   }
 
+  scrollToProjects(): void {
+    const el = document.getElementById('projects');
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }
+
   scrollDown(): void {
     const el = document.getElementById('about');
     if (el) {

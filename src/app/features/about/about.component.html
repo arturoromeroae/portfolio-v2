@@ -1,88 +1,106 @@
-<section class="section about">
+<section class="section about" id="about">
   <div class="container">
 
     <div class="section-header">
       <span class="section-label">{{ 'about.title' | translate }}</span>
       <h2>{{ 'about.subtitle' | translate }}</h2>
+      <p>{{ 'about.description' | translate }}</p>
     </div>
 
-    <div class="about__grid">
+    <div class="about__bento">
 
-      <!-- Text side -->
-      <div class="about__text">
-        <p>{{ 'about.description' | translate }}</p>
-        <p>{{ 'about.description2' | translate }}</p>
+      <!-- Main narrative & specialties -->
+      <div class="bento-card bento-card--narrative">
+        <div class="bento-header">
+          <span class="bento-badge">Trayectoria & Enfoque</span>
+          <h3>Ingeniería centrada en resultados y calidad de software</h3>
+        </div>
+        <p class="narrative-text">{{ 'about.description2' | translate }}</p>
 
-        <!-- Location & sectors -->
-        <div class="about__meta">
+        <!-- Meta specs -->
+        <div class="about__meta-strip">
           <div class="meta-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
             </svg>
-            Lima, Perú
+            <span>Lima, Perú</span>
           </div>
           <div class="meta-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
             </svg>
-            {{ 'about.sectors_list' | translate }}
+            <span>{{ 'about.sectors_list' | translate }}</span>
           </div>
         </div>
 
-        <!-- Specialties -->
-        <div class="about__specialties">
-          <h3>{{ 'about.specialties' | translate }}</h3>
-          <div class="specialties-grid">
+        <!-- Specialties chips -->
+        <div class="specialties-block">
+          <span class="specialties-title">{{ 'about.specialties' | translate }}</span>
+          <div class="specialties-tags">
             @for (s of specialties; track s.key) {
-              <div class="specialty-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                {{ s.key | translate }}
+              <div class="specialty-pill">
+                <span class="pill-dot"></span>
+                <span class="pill-text">{{ s.key | translate }}</span>
               </div>
             }
           </div>
         </div>
       </div>
 
-      <!-- Stats side -->
-      <div class="about__stats">
-        <div class="big-stat">
-          <span class="big-number gradient-text">5+</span>
-          <span class="big-label">{{ 'about.years_exp' | translate }}</span>
-        </div>
-        <div class="big-stat">
-          <span class="big-number gradient-text">20+</span>
-          <span class="big-label">{{ 'about.projects_done' | translate }}</span>
-        </div>
-        <div class="big-stat">
-          <span class="big-number gradient-text">4</span>
-          <span class="big-label">{{ 'about.companies' | translate }}</span>
-        </div>
-        <div class="big-stat">
-          <span class="big-number gradient-text">4</span>
-          <span class="big-label">{{ 'about.sectors' | translate }}</span>
+      <!-- Stats Grid -->
+      <div class="bento-card bento-card--stats">
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-value">5+</span>
+            <span class="stat-caption">{{ 'about.years_exp' | translate }}</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value">20+</span>
+            <span class="stat-caption">{{ 'about.projects_done' | translate }}</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value">4</span>
+            <span class="stat-caption">{{ 'about.companies' | translate }}</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value">4</span>
+            <span class="stat-caption">{{ 'about.sectors' | translate }}</span>
+          </div>
         </div>
 
-        <!-- Code card -->
-        <div class="code-card">
-          <div class="code-header">
-            <span class="dot r"></span>
-            <span class="dot y"></span>
-            <span class="dot g"></span>
-            <span class="code-filename">profile.ts</span>
+        <!-- Engineering Pillars Card (Replaces generic AI code card) -->
+        <div class="pillars-card">
+          <div class="pillars-header">
+            <span class="pillars-tag">Filosofía de Arquitectura</span>
           </div>
-          <pre class="code-body"><code><span class="kw">const</span> arturo <span class="op">=</span> &#123;
-  <span class="key">name</span><span class="op">:</span> <span class="str">'Arturo Romero'</span>,
-  <span class="key">role</span><span class="op">:</span> <span class="str">'Senior Full Stack'</span>,
-  <span class="key">location</span><span class="op">:</span> <span class="str">'Lima, Peru 🇵🇪'</span>,
-  <span class="key">available</span><span class="op">:</span> <span class="bool">true</span>,
-  <span class="key">remote</span><span class="op">:</span> <span class="bool">true</span>,
-&#125;;</code></pre>
+          <div class="pillars-list">
+            <div class="pillar-item">
+              <span class="pillar-bullet">01</span>
+              <div class="pillar-info">
+                <strong>Escalabilidad Empresarial</strong>
+                <p>Estructuras modulares con Angular y APIs desacopladas para alta disponibilidad.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-bullet">02</span>
+              <div class="pillar-info">
+                <strong>Integraciones Críticas</strong>
+                <p>Sincronización robusta con Salesforce CRM, PeopleSoft ERP y pasarelas de pago.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-bullet">03</span>
+              <div class="pillar-info">
+                <strong>Seguridad & Cloud Native</strong>
+                <p>Contenerización con Docker, despliegues en Azure/AWS y directivas de seguridad CSP/OWASP.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
 
     </div>
+
   </div>
 </section>

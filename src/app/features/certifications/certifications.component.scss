@@ -12,20 +12,21 @@
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: var(--space-6);
   display: flex;
   align-items: flex-start;
   gap: var(--space-4);
   overflow: hidden;
+  backdrop-filter: blur(14px);
   transition: all var(--transition-base);
 
   &:hover {
     border-color: var(--cert-color, var(--accent));
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    box-shadow: 0 12px 32px -8px rgba(0,0,0,0.6);
 
-    .cert-card__glow { opacity: 1; }
+    .cert-card__glow { opacity: 0.08; }
     .cert-card__icon { color: var(--cert-color, var(--accent)); }
   }
 
@@ -44,7 +45,7 @@
   &__glow {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at top left, rgba(var(--cert-color), 0.05), transparent 60%);
+    background: radial-gradient(ellipse at top left, var(--cert-color, var(--accent)), transparent 70%);
     opacity: 0;
     transition: opacity var(--transition-base);
     pointer-events: none;
